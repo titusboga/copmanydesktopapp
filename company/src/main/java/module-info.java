@@ -4,6 +4,13 @@ module com.company.company {
 
     requires org.controlsfx.controls;
     requires org.kordamp.bootstrapfx.core;
+    requires java.rmi;
+    requires io.grpc;
+    requires protobuf.java;
+    requires io.grpc.stub;
+    requires io.grpc.protobuf;
+    requires com.google.common;
+    requires java.annotation;
 
     opens com.company.company to javafx.fxml;
     exports com.company.company;
