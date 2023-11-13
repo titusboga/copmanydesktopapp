@@ -15,6 +15,8 @@ public class MainController implements Initializable {
     public ToggleButton mariadbButton;
     public ToggleButton mysqlButton;
 
+    public GrpcClient grpcClient = new GrpcClient();
+
     private final MainService mainService = new MainService();
 
     @Override
@@ -27,7 +29,16 @@ public class MainController implements Initializable {
         mariadbButton.setText(mainService.getButtonText(mariadbButton.isSelected()));
         mysqlButton.setText(mainService.getButtonText(mysqlButton.isSelected()));
     }
-    public void mariadbButtonIDOnAction(ActionEvent actionEvent) {
+    public void mariadbButtonIDOnAction(ActionEvent actionEvent)
+    {
+        if(mariadbButton.isSelected())
+        {
+            grpcClient.run("up");
+        }
+        else
+        {
+            grpcClient.run("down");
+        }
         updateElements();
     }
 
