@@ -11,6 +11,8 @@ module com.company.company {
     requires io.grpc.protobuf;
     requires com.google.common;
     requires java.annotation;
+    requires org.apache.httpcomponents.httpcore;
+    requires org.apache.httpcomponents.httpclient;
 
     opens com.company.company to javafx.fxml;
     exports com.company.company;
