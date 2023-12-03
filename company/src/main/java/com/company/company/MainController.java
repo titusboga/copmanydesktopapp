@@ -13,19 +13,18 @@ import java.util.ResourceBundle;
 
 public class MainController implements Initializable {
 
-    public ToggleButton mariadbButton;
-    public ToggleButton mysqlButton;
-
     public GrpcClient grpcClient = new GrpcClient();
 
     private final MainService mainService = new MainService();
+    public ToggleButton mariadbButton1;
+    public ToggleButton mysqlButton1;
 
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
-        updateElements();
+     //   updateElements();
     }
 
-    private void updateElements()
+  /*  private void updateElements()
     {
         mariadbButton.setText(mainService.getButtonText(mariadbButton.isSelected()));
         mysqlButton.setText(mainService.getButtonText(mysqlButton.isSelected()));
@@ -41,7 +40,7 @@ public class MainController implements Initializable {
             grpcClient.run("down");
         }
         updateElements();
-    }
+    }*/
 
     public void mysqlButtonIDOnAction(ActionEvent actionEvent) throws IOException {
         AuthClient authClient = new AuthClient();
@@ -66,9 +65,14 @@ public class MainController implements Initializable {
             e.printStackTrace();
             System.out.println("An error occurred while sending the login request.");
         }
-        updateElements();
+      //  updateElements();
 
     }
 
 
+    public void mariadbButtonIDOnAction1(ActionEvent actionEvent) {
+    }
+
+    public void mysqlButtonIDOnAction1(ActionEvent actionEvent) {
+    }
 }

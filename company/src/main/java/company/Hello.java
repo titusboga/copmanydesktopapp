@@ -4272,10 +4272,13 @@ public final class Hello {
       "\"\n\006Status\022\013\n\007SUCCESS\020\000\022\013\n\007FAILURE\020\001\"y\n\020R" +
       "egisterResponse\0220\n\006status\030\001 \001(\0162 .compan",
       "y.RegisterResponse.Status\022\017\n\007message\030\002 \001" +
-      "(\t\"\"\n\006Status\022\013\n\007SUCCESS\020\000\022\013\n\007FAILURE\020\0012M" +
-      "\n\021HelloWorldService\0228\n\005hello\022\025.company.H" +
-      "elloRequest\032\026.company.HelloResponse\"\000b\006p" +
-      "roto3"
+      "(\t\"\"\n\006Status\022\013\n\007SUCCESS\020\000\022\013\n\007FAILURE\020\0012\311" +
+      "\001\n\021HelloWorldService\0228\n\005hello\022\025.company." +
+      "HelloRequest\032\026.company.HelloResponse\"\000\0228" +
+      "\n\005login\022\025.company.LoginRequest\032\026.company" +
+      ".LoginResponse\"\000\022@\n\010register\022\030.company.R" +
+      "egisterRequest\032\030.company.RegisterRequest" +
+      "\"\000b\006proto3"
     };
     com.google.protobuf.Descriptors.FileDescriptor.InternalDescriptorAssigner assigner =
         new com.google.protobuf.Descriptors.FileDescriptor.    InternalDescriptorAssigner() {

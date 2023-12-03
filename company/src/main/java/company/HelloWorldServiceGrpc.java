@@ -46,6 +46,68 @@ public final class HelloWorldServiceGrpc {
     return getHelloMethod;
   }
 
+  private static volatile io.grpc.MethodDescriptor<company.Hello.LoginRequest,
+      company.Hello.LoginResponse> getLoginMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "login",
+      requestType = company.Hello.LoginRequest.class,
+      responseType = company.Hello.LoginResponse.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<company.Hello.LoginRequest,
+      company.Hello.LoginResponse> getLoginMethod() {
+    io.grpc.MethodDescriptor<company.Hello.LoginRequest, company.Hello.LoginResponse> getLoginMethod;
+    if ((getLoginMethod = HelloWorldServiceGrpc.getLoginMethod) == null) {
+      synchronized (HelloWorldServiceGrpc.class) {
+        if ((getLoginMethod = HelloWorldServiceGrpc.getLoginMethod) == null) {
+          HelloWorldServiceGrpc.getLoginMethod = getLoginMethod =
+              io.grpc.MethodDescriptor.<company.Hello.LoginRequest, company.Hello.LoginResponse>newBuilder()
+              .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName(generateFullMethodName(SERVICE_NAME, "login"))
+              .setSampledToLocalTracing(true)
+              .setRequestMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
+                  company.Hello.LoginRequest.getDefaultInstance()))
+              .setResponseMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
+                  company.Hello.LoginResponse.getDefaultInstance()))
+              .setSchemaDescriptor(new HelloWorldServiceMethodDescriptorSupplier("login"))
+              .build();
+        }
+      }
+    }
+    return getLoginMethod;
+  }
+
+  private static volatile io.grpc.MethodDescriptor<company.Hello.RegisterRequest,
+      company.Hello.RegisterRequest> getRegisterMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "register",
+      requestType = company.Hello.RegisterRequest.class,
+      responseType = company.Hello.RegisterRequest.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<company.Hello.RegisterRequest,
+      company.Hello.RegisterRequest> getRegisterMethod() {
+    io.grpc.MethodDescriptor<company.Hello.RegisterRequest, company.Hello.RegisterRequest> getRegisterMethod;
+    if ((getRegisterMethod = HelloWorldServiceGrpc.getRegisterMethod) == null) {
+      synchronized (HelloWorldServiceGrpc.class) {
+        if ((getRegisterMethod = HelloWorldServiceGrpc.getRegisterMethod) == null) {
+          HelloWorldServiceGrpc.getRegisterMethod = getRegisterMethod =
+              io.grpc.MethodDescriptor.<company.Hello.RegisterRequest, company.Hello.RegisterRequest>newBuilder()
+              .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName(generateFullMethodName(SERVICE_NAME, "register"))
+              .setSampledToLocalTracing(true)
+              .setRequestMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
+                  company.Hello.RegisterRequest.getDefaultInstance()))
+              .setResponseMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
+                  company.Hello.RegisterRequest.getDefaultInstance()))
+              .setSchemaDescriptor(new HelloWorldServiceMethodDescriptorSupplier("register"))
+              .build();
+        }
+      }
+    }
+    return getRegisterMethod;
+  }
+
   /**
    * Creates a new async stub that supports all call types for the service
    */
@@ -100,6 +162,20 @@ public final class HelloWorldServiceGrpc {
         io.grpc.stub.StreamObserver<company.Hello.HelloResponse> responseObserver) {
       io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getHelloMethod(), responseObserver);
     }
+
+    /**
+     */
+    default void login(company.Hello.LoginRequest request,
+        io.grpc.stub.StreamObserver<company.Hello.LoginResponse> responseObserver) {
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getLoginMethod(), responseObserver);
+    }
+
+    /**
+     */
+    default void register(company.Hello.RegisterRequest request,
+        io.grpc.stub.StreamObserver<company.Hello.RegisterRequest> responseObserver) {
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getRegisterMethod(), responseObserver);
+    }
   }
 
   /**
@@ -136,6 +212,22 @@ public final class HelloWorldServiceGrpc {
       io.grpc.stub.ClientCalls.asyncUnaryCall(
           getChannel().newCall(getHelloMethod(), getCallOptions()), request, responseObserver);
     }
+
+    /**
+     */
+    public void login(company.Hello.LoginRequest request,
+        io.grpc.stub.StreamObserver<company.Hello.LoginResponse> responseObserver) {
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
+          getChannel().newCall(getLoginMethod(), getCallOptions()), request, responseObserver);
+    }
+
+    /**
+     */
+    public void register(company.Hello.RegisterRequest request,
+        io.grpc.stub.StreamObserver<company.Hello.RegisterRequest> responseObserver) {
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
+          getChannel().newCall(getRegisterMethod(), getCallOptions()), request, responseObserver);
+    }
   }
 
   /**
@@ -159,6 +251,20 @@ public final class HelloWorldServiceGrpc {
     public company.Hello.HelloResponse hello(company.Hello.HelloRequest request) {
       return io.grpc.stub.ClientCalls.blockingUnaryCall(
           getChannel(), getHelloMethod(), getCallOptions(), request);
+    }
+
+    /**
+     */
+    public company.Hello.LoginResponse login(company.Hello.LoginRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getLoginMethod(), getCallOptions(), request);
+    }
+
+    /**
+     */
+    public company.Hello.RegisterRequest register(company.Hello.RegisterRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getRegisterMethod(), getCallOptions(), request);
     }
   }
 
@@ -185,9 +291,27 @@ public final class HelloWorldServiceGrpc {
       return io.grpc.stub.ClientCalls.futureUnaryCall(
           getChannel().newCall(getHelloMethod(), getCallOptions()), request);
     }
+
+    /**
+     */
+    public com.google.common.util.concurrent.ListenableFuture<company.Hello.LoginResponse> login(
+        company.Hello.LoginRequest request) {
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
+          getChannel().newCall(getLoginMethod(), getCallOptions()), request);
+    }
+
+    /**
+     */
+    public com.google.common.util.concurrent.ListenableFuture<company.Hello.RegisterRequest> register(
+        company.Hello.RegisterRequest request) {
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
+          getChannel().newCall(getRegisterMethod(), getCallOptions()), request);
+    }
   }
 
   private static final int METHODID_HELLO = 0;
+  private static final int METHODID_LOGIN = 1;
+  private static final int METHODID_REGISTER = 2;
 
   private static final class MethodHandlers<Req, Resp> implements
       io.grpc.stub.ServerCalls.UnaryMethod<Req, Resp>,
@@ -209,6 +333,14 @@ public final class HelloWorldServiceGrpc {
         case METHODID_HELLO:
           serviceImpl.hello((company.Hello.HelloRequest) request,
               (io.grpc.stub.StreamObserver<company.Hello.HelloResponse>) responseObserver);
+          break;
+        case METHODID_LOGIN:
+          serviceImpl.login((company.Hello.LoginRequest) request,
+              (io.grpc.stub.StreamObserver<company.Hello.LoginResponse>) responseObserver);
+          break;
+        case METHODID_REGISTER:
+          serviceImpl.register((company.Hello.RegisterRequest) request,
+              (io.grpc.stub.StreamObserver<company.Hello.RegisterRequest>) responseObserver);
           break;
         default:
           throw new AssertionError();
@@ -235,6 +367,20 @@ public final class HelloWorldServiceGrpc {
               company.Hello.HelloRequest,
               company.Hello.HelloResponse>(
                 service, METHODID_HELLO)))
+        .addMethod(
+          getLoginMethod(),
+          io.grpc.stub.ServerCalls.asyncUnaryCall(
+            new MethodHandlers<
+              company.Hello.LoginRequest,
+              company.Hello.LoginResponse>(
+                service, METHODID_LOGIN)))
+        .addMethod(
+          getRegisterMethod(),
+          io.grpc.stub.ServerCalls.asyncUnaryCall(
+            new MethodHandlers<
+              company.Hello.RegisterRequest,
+              company.Hello.RegisterRequest>(
+                service, METHODID_REGISTER)))
         .build();
   }
 
@@ -284,6 +430,8 @@ public final class HelloWorldServiceGrpc {
           serviceDescriptor = result = io.grpc.ServiceDescriptor.newBuilder(SERVICE_NAME)
               .setSchemaDescriptor(new HelloWorldServiceFileDescriptorSupplier())
               .addMethod(getHelloMethod())
+              .addMethod(getLoginMethod())
+              .addMethod(getRegisterMethod())
               .build();
         }
       }

@@ -24,7 +24,7 @@ public class SceneRouter {
             switch (scene) {
                 case MAIN:
                     loader = new FXMLLoader(getClass().getResource("main.fxml"));
-                    gStage.setTitle("Company");
+                    gStage.setTitle("Service Handler");
                     gStage.setScene(new javafx.scene.Scene(loader.load(), 963,746));
                     System.out.println("Go to main");
                     break;
