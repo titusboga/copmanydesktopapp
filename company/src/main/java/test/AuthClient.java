@@ -1,6 +1,6 @@
 package test;
 
-import com.company.company.UrlMapping;
+import com.UrlMapping;
 import company.Hello;
 import company.Hello.LoginRequest;
 import company.Hello.LoginResponse;
@@ -15,7 +15,7 @@ import java.io.IOException;
 public class AuthClient {
 
     private final HttpClient httpClient = HttpClients.createDefault();
-    private final String loginServiceUrl = "http://localhost:8080";
+    private final String loginServiceUrl = "http://ubuntu1.local:8080";
 
     public LoginResponse sendLoginRequest(LoginRequest loginRequest) throws IOException {
         // Serialize the protobuf LoginRequest message to a byte array

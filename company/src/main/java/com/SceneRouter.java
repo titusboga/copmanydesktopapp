@@ -1,11 +1,10 @@
-package com.company.company;
+package com;
 
 import javafx.fxml.FXMLLoader;
-import javafx.scene.Scene;
 
 import java.io.IOException;
 
-import static com.company.company.CompanyApplication.gStage;
+import static com.CompanyApplication.gStage;
 
 public class SceneRouter {
     public enum Scene {

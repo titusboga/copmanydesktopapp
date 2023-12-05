@@ -1,4 +1,4 @@
-package com.company.company;
+package com;
 
 public class UrlMapping {
     public static final String LOGIN = "/login";

@@ -1,19 +1,11 @@
-package com.company.company;
+package com.login;
 
+import com.SceneRouter;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
-import javafx.fxml.FXMLLoader;
-import javafx.scene.Parent;
-import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.PasswordField;
 import javafx.scene.control.TextField;
-import javafx.stage.Stage;
-import test.AuthClient;
-
-import java.io.IOException;
-
-import static com.company.company.CompanyApplication.gStage;
 
 public class LoginController {
 

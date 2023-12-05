@@ -1,4 +1,4 @@
-package com.company.company;
+package com.register;
 
 import company.Hello;
 import test.AuthClient;

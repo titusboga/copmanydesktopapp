@@ -1,4 +1,4 @@
-package com.company.company;
+package com.main;
 
 public class MainService {
     public String getButtonText(boolean status)

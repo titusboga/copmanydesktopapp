@@ -1,4 +1,4 @@
-package com.company.company;
+package com;
 
 import company.Hello;
 import company.HelloWorldServiceGrpc;

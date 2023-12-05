@@ -1,5 +1,6 @@
-package com.company.company;
+package com.main;
 
+import com.GrpcClient;
 import company.Hello.LoginRequest;
 import company.Hello.LoginResponse;
 import java.io.IOException;

@@ -14,6 +14,12 @@ module com.company.company {
     requires org.apache.httpcomponents.httpcore;
     requires org.apache.httpcomponents.httpclient;
 
-    opens com.company.company to javafx.fxml;
-    exports com.company.company;
+    opens com to javafx.fxml;
+    exports com;
+    exports com.login;
+    opens com.login to javafx.fxml;
+    exports com.main;
+    opens com.main to javafx.fxml;
+    exports com.register;
+    opens com.register to javafx.fxml;
 }
